@@ -12,7 +12,7 @@
 	<meta property="og:title" content="Mr kuku Management System" />
 
 	<!-- PAGE TITLE HERE -->
-	<title> {{ $title ?? 'IMS'}} </title>
+	<title>Log in Page </title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{asset('images/logo.ico')}}" />
