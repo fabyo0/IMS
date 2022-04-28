@@ -599,8 +599,8 @@
 							<img src="{{asset('images/profile/pic1.jpg')}}" alt=""/>
 							<div class="d-flex align-items-center sidebar-info">
 								<div>
-									<span class="font-w400 d-block">{{Auth::user()->name}}</span>
-									<small class="text-end font-w400">Superadmin</small>
+									<span class="font-w400 d-block">{{ucfirst(Auth::user()->name)}}</span>
+									<small class="text-end font-w400">{{Auth::user()->is_admin ? 'Superadmin' : 'Registrar'}}</small>
 								</div>
 								<i class="fas fa-chevron-down"></i>
 							</div>
