@@ -50,6 +50,8 @@ This phase will have all the investors basic details such as
 - Residence Area
 - Phone Number
 - Email
+- DOB
+- Investor image
 - Copy of ID (Gorverment Issued Id)
 - Bank Details
    - Account Name
