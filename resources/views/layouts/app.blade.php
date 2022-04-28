@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{asset('vendor/jquery-nice-select/css/nice-select.css')}}">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
+    @yield('styles')
+
 </head>
 <body>
 
@@ -43,10 +45,10 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="{{route('dashboard')}}" class="brand-logo">
                 <div class="d-flex">
-                    <img src="{{asset('images/logo.jpeg')}}" alt="logo" style="width: 3rem; border-radius:5rem;">
-                     <h2 class=" fw-bold" style="margin-left: 1rem;">Mr. Kuku</h2>
+                    <img src="{{asset('images/logo.jpeg')}}" alt="logo" style="width: 3rem; border-radius:5rem;" id="nav-logo">
+                     <h2 class="fw-bold d-none d-md-block" style="margin-left: 1rem;">Mr. Kuku</h2>
                 </div>
 
             </a>
@@ -621,19 +623,20 @@
 				<ul class="metismenu" id="menu">
 
                     <li class="{{Request::is('dashboard') ? 'mm-active' : ''}}">
-                        <a class="" href="javascript:void()">
+                        <a class="" href="{{route('dashboard')}}">
 							<i class="flaticon-025-dashboard"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
                     </li>
 
-                    <li class=""><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <li class="{{Request::is(['investors.index','investors.show','investor.details']) ? 'mm-active' : ''}}">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <img src="{{asset('images/users-solid.svg')}}" alt="investors" style="width:1.5rem; margin-right:1rem;">
                         <span class="nav-text">Investors</span>
                     </a>
                     <ul aria-expanded="false" class="left mm-collapse">
-                        <li><a href="job-list.html">Investors</a></li>
-                        <li><a href="job-view.html">Add Investor</a></li>
+                        <li><a href="{{route('investors.show')}}">Investors</a></li>
+                        <li><a href="{{route('investors.index')}}">Add Investor</a></li>
                     </ul>
                 </li>
 
@@ -698,6 +701,8 @@
     <script src="{{asset('vendor/jquery-nice-select/js/jquery.nice-select.min.js')}}"></script>
     <script src="{{asset('js/custom.min.js')}}"></script>
     <script src="{{asset('js/dlabnav-init.js')}}"></script>
+
+    @yield('scripts')
 
 </body>
 </html>
