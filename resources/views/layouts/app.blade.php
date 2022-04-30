@@ -639,7 +639,7 @@
                         <img src="{{asset('images/users-solid.svg')}}" alt="investors" style="width:1.5rem; margin-right:1rem;">
                         <span class="nav-text">Investors</span>
                     </a>
-                    <ul aria-expanded="false" class="left mm-collapse">
+                    <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
                         <li><a href="{{route('investors.show')}}">Investors</a></li>
                         <li><a href="{{route('investors.index')}}">Add Investor</a></li>
                     </ul>
