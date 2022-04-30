@@ -645,6 +645,13 @@
                     </ul>
                 </li>
 
+                <li class="{{Request::is('contracts.index') ? 'mm-active' : ''}}">
+                    <a class="" href="{{route('contracts.index')}}">
+                        <i class="flaticon-022-copy"></i>
+                        <span class="nav-text">Contracts</span>
+                    </a>
+                </li>
+
 
                 </ul>
 				<div class="copyright">

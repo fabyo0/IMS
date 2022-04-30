@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContractsController;
 use App\Http\Controllers\InvestorController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,5 +41,10 @@ Route::prefix('investors')->middleware('auth')->group(function () {
     Route::get('/{investor}/edit',[InvestorController::class,'editInvestor'])->name('investor.edit');
 
     Route::get('/{investor}/delete',[InvestorController::class,'deleteInvestor'])->name('investor.delete');
+});
 
+
+Route::prefix('contracts')->middleware('auth')->group(function(){
+
+    Route::get('/all',[ContractsController::class,'index'])->name('contracts.index');
 });
