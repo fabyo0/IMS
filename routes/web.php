@@ -48,3 +48,11 @@ Route::prefix('contracts')->middleware('auth')->group(function(){
 
     Route::get('/all',[ContractsController::class,'index'])->name('contracts.index');
 });
+
+Route::get('/settings',function(){
+    return view('Settings.index');
+})->middleware('auth')->name('settings');
+
+Route::get('/settings/{role}/role',function($role){
+    return view('Settings.role',['role' => $role]);
+})->middleware('auth')->name('settings.role-permissions');
