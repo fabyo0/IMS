@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContractsController;
 use App\Http\Controllers\InvestorController;
+use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,10 +50,6 @@ Route::prefix('contracts')->middleware('auth')->group(function(){
     Route::get('/all',[ContractsController::class,'index'])->name('contracts.index');
 });
 
-Route::get('/settings',function(){
-    return view('Settings.index');
-})->middleware('auth')->name('settings');
+Route::get('/settings',[SettingsController::class,'index'])->name('settings');
 
-Route::get('/settings/{role}/role',function($role){
-    return view('Settings.role',['role' => $role]);
-})->middleware('auth')->name('settings.role-permissions');
+Route::get('/settings/{role}/role',[SettingsController::class,'rolePermissions'])->name('settings.role-permissions');

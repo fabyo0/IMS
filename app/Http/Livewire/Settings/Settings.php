@@ -4,18 +4,18 @@ namespace App\Http\Livewire\Settings;
 
 use App\Models\Offices;
 use App\Models\Projects;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-
-
 
 class Settings extends Component
 {
    public $roles,$role_name;
    public $offices,$location,$min_amount,$max_amount;
    public $projects,$project_name;
-
+   public $users,$f_name,$l_name,$a_role="",$a_office="";
     public function render()
     {
         return view('livewire.settings.settings');
@@ -26,6 +26,7 @@ class Settings extends Component
         $this->roles=Role::all();
         $this->offices=Offices::all();
         $this->projects=Projects::all();
+        $this->users=User::all();
 
     }
 
@@ -114,6 +115,50 @@ class Settings extends Component
         //update project
         $this->projects=Projects::all();
     }
+
+    public function newUser()
+    {
+        // dd($this->a_role);
+        $this->validate([
+            'f_name' => 'required|string|max:50',
+            'l_name' => 'required|string|max:50',
+            'a_role' => 'required',
+            'a_office' => 'required'
+            ]);
+
+            $f_name=ucfirst($this->f_name);
+            $l_name=ucfirst($this->l_name);
+
+                $full_name=$f_name.' '.$l_name;
+                //username innitals f.lastname
+                $username=substr($f_name,0,1).'.'.$l_name;
+                $password=Hash::make('Mrkuku2022');
+
+                $user=User::create([
+                    'name' => $f_name." ".$l_name,
+                    'username' => $username,
+                    'password' => $password,
+                    'office_id' => $this->a_office,
+                    'is_password_default'=> true,
+                ]);
+
+                $user->assignRole($this->a_role);
+
+                //update users
+                $this->users=User::all();
+
+
+                $this->dispatchBrowserEvent('closeUserModal');
+     }
+
+     public function deleteUser(User $user){
+         $user->delete();
+
+        //update users
+        $this->users=User::all();
+     }
+
+
 
 
 

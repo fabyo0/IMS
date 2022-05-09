@@ -38,6 +38,10 @@ window.addEventListener('closeOfficeModal', event => {
 window.addEventListener('closeProjectModal', event => {
       $("#newProjectModal").modal('toggle');
 })
+window.addEventListener('closeUserModal', event => {
+      $("#newUserModal").modal('toggle');
+})
+
 
 </script>
 @endsection
