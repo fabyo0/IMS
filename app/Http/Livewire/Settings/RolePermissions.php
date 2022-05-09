@@ -40,5 +40,7 @@ class RolePermissions extends Component
          //save the permissions for the role
          $this->role->syncPermissions($this->selectedPermissions);
 
+         return redirect()->route('settings');
+
     }
 }
