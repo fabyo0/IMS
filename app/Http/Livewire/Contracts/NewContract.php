@@ -117,7 +117,7 @@ class NewContract extends Component
 
         $contract_info->save();
 
-        return redirect()->route('contracts.index');
+        return redirect()->route('contracts.index')->with('success','Contract Added Successfully');
 
 
 
