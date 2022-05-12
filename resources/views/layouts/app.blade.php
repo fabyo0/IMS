@@ -642,16 +642,22 @@
                         <span class="nav-text">Investors</span>
                     </a>
                     <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
-                        <li><a href="{{route('investors.show')}}">Investors</a></li>
+                        <li><a href="{{route('investors.show')}}">View Investors</a></li>
                         <li><a href="{{route('investors.index')}}">Add Investor</a></li>
                     </ul>
                 </li>
 
                 <li class="{{Request::is('contracts.index') ? 'mm-active' : ''}}">
-                    <a class="" href="{{route('contracts.index')}}">
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-022-copy"></i>
                         <span class="nav-text">Contracts</span>
                     </a>
+
+                    <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
+                        <li><a href="{{route('contracts.index')}}">View Contracts</a></li>
+                        <li><a href="{{route('contract.new')}}">Add Contract</a></li>
+                    </ul>
+
                 </li>
 
 

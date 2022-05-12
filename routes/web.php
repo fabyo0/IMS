@@ -48,6 +48,8 @@ Route::prefix('investors')->middleware('auth')->group(function () {
 Route::prefix('contracts')->middleware('auth')->group(function(){
 
     Route::get('/all',[ContractsController::class,'index'])->name('contracts.index');
+
+    Route::get('/new',[ContractsController::class,'newContract'])->name('contract.new');
 });
 
 Route::get('/settings',[SettingsController::class,'index'])->name('settings');
