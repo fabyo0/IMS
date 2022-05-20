@@ -21,6 +21,8 @@
 @section('main-content')
    <div class="row">
        <div class="">
+           <h1>Dashboard Module Coming Soon on June</h1>
+            <p class="text-muted">This is a static page showing what the page will look like when launched</p>
 				<div class="row">
 					<div class="col-xl-12">
 						<div class="row">
