@@ -66,9 +66,9 @@
 												</div>
                                             </div>
                                             @if (Route::has('password.request'))
-                                            <div class="mb-3">
+                                            {{-- <div class="mb-3">
                                                 <a href="page-forgot-password.html">Forgot Password?</a>
-                                            </div>
+                                            </div> --}}
                                             @endif
                                         </div>
                                         <div class="text-center">
