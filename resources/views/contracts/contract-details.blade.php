@@ -127,7 +127,7 @@
                                 <div>
                                     <a href="{{route('contract.edit',$contract->id)}}" class="mb-3 btn btn-primary btn-md me-2">Edit Contract</a>
                                         <button type="submit" class="mb-3 btn btn-warning btn-md me-2">Delete Contract</button>
-                                    <button data-bs-toggle="modal" data-bs-target="#endContract" class="mb-3 btn btn-secondary btn-md">End Contract</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#endContract" class="mb-3 btn btn-secondary btn-md">End Contract</button>
                                 </div>
                             </form>
 
