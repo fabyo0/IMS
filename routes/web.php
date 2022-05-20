@@ -50,6 +50,17 @@ Route::prefix('contracts')->middleware('auth')->group(function(){
     Route::get('/all',[ContractsController::class,'index'])->name('contracts.index');
 
     Route::get('/new',[ContractsController::class,'newContract'])->name('contract.new');
+
+    Route::get('/{contract}/details',[ContractsController::class,'contractDetails'])->name('contract.details');
+
+    Route::get('/{contract}/edit',[ContractsController::class,'contractEdit'])->name('contract.edit');
+
+    Route::get('/contract/{contract}/download/{type}',[ContractsController::class,'downloadAttachment'])->name('contract.download');
+
+    Route::post('/contract/end',[ContractsController::class,'endContract'])->name('contract.end');
+
+    Route::delete('/contract/{contract}/delete',[ContractsController::class,'deleteContract'])->name('contract.delete');
+
 });
 
 Route::get('/settings',[SettingsController::class,'index'])->name('settings');
