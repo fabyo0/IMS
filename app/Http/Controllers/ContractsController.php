@@ -92,7 +92,7 @@ class ContractsController extends Controller
     {
         $contract->delete();
 
-        return back()->with('success','Contract Deleted Successfully');
+        return redirect()->route('contracts.index')->with('success','Contract Deleted Successfully');
 
     }
 }
