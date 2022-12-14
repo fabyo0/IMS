@@ -2,9 +2,23 @@
 
 # Investors Management System (IMS)
 
-IMS is a web based systems which aims to facilitate management of Investors which can be used by any Investors Organization.
+IMS is a web based systems which aims to facilitate management of Investors which can be used by any Investors Organization you can customize per your own specifics.
 
+Requirements
+- Composer installed
+- Php 8 +
 
+### HOW TO INSTALL THE APP
+- Clone your project into you web server directory
+- Composer install
+- Rename .env-example to .env and configure your enviroment settings
+- Run the migrations
+
+If you prefer to start up the app using pre-data you can run the seeder command which will populate your tables
+```
+php artisan db:seed
+
+```
 ## HOW THE SYSTEMS WORKS
 
 Users will be located depending on which branch are designated to and each user will have diffrent permissions which will be assigned by Super Administrator.
