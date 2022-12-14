@@ -7,8 +7,8 @@
 	<meta name="author" content="Abraham Maleko" />
 	<meta name="robots" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Mr kuku Management System" />
-	<meta property="og:title" content="Mr kuku Management System" />
+	<meta name="description" content="My app description goes here" />
+	<meta property="og:title" content="My app description goes here" />
 
 	<!-- PAGE TITLE HERE -->
 	@yield('title')
@@ -48,7 +48,7 @@
             <a href="{{route('dashboard')}}" class="brand-logo">
                 <div class="d-flex">
                     <img src="{{asset('images/logo.jpeg')}}" alt="logo" style="width: 3rem; border-radius:5rem;" id="nav-logo">
-                     <h2 class="fw-bold d-none d-md-block" style="margin-left: 1rem;">Mr. Kuku</h2>
+                     <h3 class="pt-2 fw-bold d-none d-md-block" style="margin-left: 1rem;">{{env('APP_NAME','IMS')}}</h3>
                 </div>
 
             </a>
