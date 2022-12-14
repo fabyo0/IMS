@@ -7,8 +7,8 @@
 	<meta name="author" content="Abraham Maleko" />
 	<meta name="robots" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Mr kuku Management System" />
-	<meta property="og:title" content="Mr kuku Management System" />
+	<meta name="description" content="My app description goes here" />
+	<meta property="og:title" content="My app description goes here" />
 
 	<!-- PAGE TITLE HERE -->
 	@yield('title')
@@ -48,7 +48,7 @@
             <a href="{{route('dashboard')}}" class="brand-logo">
                 <div class="d-flex">
                     <img src="{{asset('images/logo.jpeg')}}" alt="logo" style="width: 3rem; border-radius:5rem;" id="nav-logo">
-                     <h2 class="fw-bold d-none d-md-block" style="margin-left: 1rem;">Mr. Kuku</h2>
+                     <h3 class="pt-2 fw-bold d-none d-md-block" style="margin-left: 1rem;">{{env('APP_NAME','IMS')}}</h3>
                 </div>
 
             </a>
@@ -642,16 +642,22 @@
                         <span class="nav-text">Investors</span>
                     </a>
                     <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
-                        <li><a href="{{route('investors.show')}}">Investors</a></li>
+                        <li><a href="{{route('investors.show')}}">View Investors</a></li>
                         <li><a href="{{route('investors.index')}}">Add Investor</a></li>
                     </ul>
                 </li>
 
                 <li class="{{Request::is('contracts.index') ? 'mm-active' : ''}}">
-                    <a class="" href="{{route('contracts.index')}}">
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-022-copy"></i>
                         <span class="nav-text">Contracts</span>
                     </a>
+
+                    <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
+                        <li><a href="{{route('contracts.index')}}">View Contracts</a></li>
+                        <li><a href="{{route('contract.new')}}">Add Contract</a></li>
+                    </ul>
+
                 </li>
 
 

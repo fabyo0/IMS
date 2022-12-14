@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Investors;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+
 
 class InvestorController extends Controller
 {
@@ -57,17 +59,32 @@ class InvestorController extends Controller
     public function deleteInvestor(Investors $investor)
     {
 
-        if ($investor->id_path) {
-            Storage::delete(storage_path('app/'.$investor->id_path));
+        $transaction=DB::transaction(function () use ($investor) {
+            //if the investor has contracts
+            if ($investor->contracts) {
+                //permently deletes the investor contracts
+                foreach ($investor->contracts as $contract) {
+                    $contract->forceDelete();
+                }
+
+                // To be added contracts deletes attachments
+            }
+
+
+            //deletes the investor attachments
+            if ($investor->id_path) {
+                Storage::delete(storage_path('app/'.$investor->id_path));
+            }
+            $investor->delete();
+
+            return true;
+        });
+
+        if ($transaction) {
+            return redirect()->route('investors.show')->with('success','Successfully deleted investor');
         }
-
-        if ($investor->id_path) {
-            Storage::delete(storage_path('app/'.$investor->id_path));
+        else {
+         abort(404);
         }
-
-        $investor->delete();
-
-        return redirect()->route('investors.show')->with('success','Successfully deleted investor');
-
     }
 }

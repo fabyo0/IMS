@@ -19,4 +19,9 @@ class Investors extends Model
         'email',
         'password',
     ];
+
+    public function contracts()
+    {
+        return $this->hasMany(Contracts::class,'investor_id');
+    }
 }
