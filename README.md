@@ -2,9 +2,8 @@
 
 # Investors Management System (IMS)
 
-IMS is a web based systems which aims to facilitate management of Investors in the orgarnization of Mr.Kuku.
+IMS is a web based systems which aims to facilitate management of Investors which can be used by any Investors Organization.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## HOW THE SYSTEMS WORKS
 
@@ -17,23 +16,23 @@ In general all users are categorized as follows
 
 ### Normal Users
 This users have permissions to
-- Add Investors Profile
-- Edit Investors Profile
+- Add Investors Profile ✅
+- Edit Investors Profile ✅
 
 ### Administrators
 This users have permissions to
-- Add Investors Profile
-- Edit Investors Profile
-- Add New Contracts (Each branch can add a new contract depending on which contract amount is allowed to)
-- Edit Contract details (Which previously created by its branch)
-- Access to Investors Payment List
-- Access to Top Investors,Investors Flow Chart
+- Add Investors Profile ✅
+- Edit Investors Profile ✅
+- Add New Contracts (Each branch can add a new contract depending on which contract amount is allowed to) ✅
+- Edit Contract details (Which previously created by its branch) ✅
+- Access to Investors Payment List ❌
+- Access to Top Investors,Investors Flow Chart ❌
 
 ### Super Administators
 This users have all the administrators priviledges with addition of
-- Approve password resets
-- Logs
-- Have read,write access to all contracts not bounded by branch
+- Approve password resets ❌
+- Logs ❌
+- Have read,write access to all contracts not bounded by branch ✅
 
 
 ## System Phases
@@ -41,7 +40,7 @@ IMS is divided into three phases
 
 1.  Investor Profile
 2. Contracts
-3. Payment methodoligies, Admin Dashboard , Reports
+3.  Admin Dashboard , Reports ❌
 
 ### Investor Profile
 This phase will have all the investors basic details such as
@@ -73,3 +72,13 @@ This will store the contract details associated with any investor
 - Scanned Contract Document
 
 ## ** TO BE CONTINUED **
+
+### Features to be added 
+- Show investor image in investor Profile 
+- Show user role in uploaded by in contract detail
+- In editing a contract which is not under the office power the edit button should be disbaled
+- Logo when the menu is minimized ✅
+- Check if the CEO can edit any contract or add any contract
+- Dashboard Module 
+- Reset button should not be in edit investor
+
