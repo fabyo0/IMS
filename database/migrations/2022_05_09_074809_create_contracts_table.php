@@ -18,7 +18,7 @@ return new class extends Migration
              $table->foreignId('investor_id')->constrained();
              $table->foreignId('project_id')->constrained();
              $table->foreignId('uploader_id')->constrained('users');
-             $table->foreignId('modified_by')->constrained('users')->nullable();
+             $table->foreignId('modified_by')->nullable()->constrained('users');
 
              $table->string('receipt_attachments');
              $table->unsignedInteger('amount');
