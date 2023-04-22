@@ -48,6 +48,10 @@ If you prefer to start up the app using pre-data you can run the seeder command 
 ```
 php artisan db:seed
 ```
+Then you can login the following credentials
+- Username: S.Admin
+- Password: Admin@2023
+
 ## HOW THE SYSTEMS WORKS
 
 Users will be located depending on which branch are designated to and each user will have diffrent permissions which will be assigned by Super Administrator.
@@ -59,23 +63,24 @@ In general all users are categorized as follows
 
 ### Normal Users
 This users have permissions to
-- Add Investors Profile 
-- Edit Investors Profile 
+- Add Investors Profile ✅
+- Edit Investors Profile ✅
 
 ### Administrators
 This users have permissions to
-- Add Investors Profile
-- Edit Investors Profile
-- Add New Contracts (Each branch can add a new contract depending on which contract amount is allowed to) 
-- Edit Contract details (Which previously created by its branch) 
-- Access to Investors Payment List
-- Access to Top Investors,Investors Flow Chart 
+- Add Investors Profile ✅
+- Edit Investors Profile ✅
+- Add New Contracts (Each branch can add a new contract depending on which contract amount is allowed to) ✅
+- Edit Contract details (Which previously created by its branch) ✅
+- Access to Investors Payment List ❌
+- Access to Top Investors,Investors Flow Chart ❌
 
 ### Super Administators
 This users have all the administrators priviledges with addition of
+- Create staff users which will have a default password of 'Staff@2023' ✅
+- Have read,write access to all contracts not bounded by branch ✅
 - Approve password resets
 - Logs 
-- Have read,write access to all contracts not bounded by branch
 
 
 ## System Phases
