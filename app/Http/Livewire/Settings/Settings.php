@@ -152,7 +152,14 @@ class Settings extends Component
      }
 
      public function deleteUser(User $user){
+        //check if user is administrator
+        if ($user->hasRole('Super Administrator')) {
+            session()->flash('deleteUserError', 'You can not delete a Super Adminstrator');
+            return false;
+        }
+
          $user->delete();
+         session()->flash('deleteUser', 'You have deleted user successfully');
 
         //update users
         $this->users=User::all();
