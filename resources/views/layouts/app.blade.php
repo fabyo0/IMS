@@ -636,30 +636,32 @@
 						</a>
                     </li>
 
-                    <li class="{{Request::is(['investors.index','investors.show','investor.details']) ? 'mm-active' : ''}}">
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <img src="{{asset('images/users-solid.svg')}}" alt="investors" style="width:1.5rem; margin-right:1rem;">
-                        <span class="nav-text">Investors</span>
-                    </a>
-                    <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
-                        <li><a href="{{route('investors.show')}}">View Investors</a></li>
-                        <li><a href="{{route('investors.index')}}">Add Investor</a></li>
-                    </ul>
-                </li>
-
-                <li class="{{Request::is('contracts.index') ? 'mm-active' : ''}}">
+                @can('Manage Investors')
+                <li class="{{Request::is(['investors.index','investors.show','investor.details']) ? 'mm-active' : ''}}">
                     <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                        <i class="flaticon-022-copy"></i>
-                        <span class="nav-text">Contracts</span>
-                    </a>
+                    <img src="{{asset('images/users-solid.svg')}}" alt="investors" style="width:1.5rem; margin-right:1rem;">
+                    <span class="nav-text">Investors</span>
+                </a>
+                <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
+                    <li><a href="{{route('investors.show')}}">View Investors</a></li>
+                    <li><a href="{{route('investors.index')}}">Add Investor</a></li>
+                </ul>
+            </li>
+                @endcan
 
-                    <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
-                        <li><a href="{{route('contracts.index')}}">View Contracts</a></li>
-                        <li><a href="{{route('contract.new')}}">Add Contract</a></li>
-                    </ul>
+             @can('Manage Contracts')
+             <li class="{{Request::is('contracts.index') ? 'mm-active' : ''}}">
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-022-copy"></i>
+                    <span class="nav-text">Contracts</span>
+                </a>
 
-                </li>
-
+                <ul aria-expanded="false" class="left mm-collapse"style="height:14px;">
+                    <li><a href="{{route('contracts.index')}}">View Contracts</a></li>
+                    <li><a href="{{route('contract.new')}}">Add Contract</a></li>
+                </ul>
+            </li>
+             @endcan
 
                 </ul>
 				<div class="copyright">
