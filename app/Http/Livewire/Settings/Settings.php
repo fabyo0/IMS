@@ -132,7 +132,7 @@ class Settings extends Component
                 $full_name=$f_name.' '.$l_name;
                 //username innitals f.lastname
                 $username=substr($f_name,0,1).'.'.$l_name;
-                $password=Hash::make('Mrkuku2022');
+                $password=Hash::make('Staff@2023');
 
                 $user=User::create([
                     'name' => $f_name." ".$l_name,
