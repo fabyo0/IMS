@@ -12,7 +12,7 @@ var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     del           = require('del');
 
-sass.compiler     = require('node-sass');
+import compiler from 'node-sass';
 var Server        = require('karma').Server;
 var browserSync   = require('browser-sync').create();
 var reload        = browserSync.reload;
