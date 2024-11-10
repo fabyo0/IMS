@@ -1197,5 +1197,5 @@ for (var key in cssKeywords) {
   reverseKeywords[JSON.stringify(cssKeywords[key])] = key;
 }
 
-});Color = require('color.js');
+import });Color from 'color.js';
 })();
